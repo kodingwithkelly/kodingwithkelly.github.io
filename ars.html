@@ -35,21 +35,27 @@
 							<h1 class="major">Airline Reservation System</h1>
 							<span class="image fit"><img src="images/ars.png" alt="" /></span>
 							<ul>
-								<li>Coordinated with 2 software engineering students to design an airline reservation system utilizing Java and MySQL to allow users interact with the airline database that supports archiving.</li>
-								<li>Supplemented the system with 16 procedures and 2 triggers along with 5 queries that involved 2-5 relations simultaneously using correlated subqueries, joins, and/or aggregation.</li>
-								<li>Created a database such that its relations were in 3NF or BCNF to eliminate data redundancies.</li>
+								<li>Coordinated with <b>2</b> software engineering students to design an airline reservation system utilizing <b>Java</b> and <b>MySQL</b> to allow users interact with the airline database that supports archiving.</li>
+								<li>Supplemented the system with <b>16</b> procedures and <b>2</b> triggers along with <b>5</b> queries that involved <b>2-5</b> relations simultaneously using correlated subqueries, joins, and/or aggregation.</li>
+								<li>Created a database such that its relations were in <b>3NF</b> or <b>BCNF</b> to eliminate data redundancies.</li>
 								<li>Wrote a detailed report that explains each relational dependency and how the database has been normalized.</li>
 							</ul>
                             <h2>Normalization Report</h2>
                             <span>By having an ID as a primary key for each table, we were able to use it as a unique identifier for the rest of attributes that followed. When we query for tuples with those primary keys, 
-                                we are given back unique tuples. Therefore, each relation with only one functional dependency is in BCNF. <br><br>
+                                we are given back unique tuples. <b>Therefore, each relation with only one functional dependency is in BCNF</b>. <br><br>
+
                                 The Airport table has two functional dependencies; however, it is also in BCNF. Similar to our previous reasoning, when we use aiportID as a primary key, the rest of the attributes supply 
                                 us with unique values which causes no redundancies. (City, state) functionally determines airportID and name. Typically, cities could have multiple airports, but in our database we decided 
-                                to have (city, state) be a unique key. Thus, having (city, state) as a unique key functions similarly to a primary key where we are able to obtain airportID and name without redundancies. <br><br>
+                                to have (city, state) be a unique key. Thus, <b>having (city, state) as a unique key functions similarly to a primary</b> key where we are able to obtain airportID and name <b>without redundancies</b>. <br><br>
+
                                 The Flight table contains two functional dependencies, one of which follows our previous explanation. The second functional dependency shows that pilotID functionally determines flightID. 
-                                This still follows BNCF rules because we have made the relation so that there is only one pilot per flight and that after that flight is done, we update the pilot with a new flight. <br><br>
+                                <b>This still follows BNCF rules because we have made the relation so that there is only one pilot per flight and that after that flight is done, we update the pilot with a new flight</b>. <br><br>
+
                                 Lastly, the Route table has two functional dependencies that are in 3NF. Notice that routeID can have multiple airlines so routeID cannot functionally determine airlineID. Correspondingly, 
-                                airlineID can have multiple routes that would create anomalies. RouteID can only functionally determine originAirportID and destinationAirportID because it is equivalent to an origin city and destination city. Likewise, an origin and destination can determine which route to take. If we were to decompose the relation to check whether it is in 3NF or not, we first find the candidate keys. Here, the candidate keys are (airlineID routeID) and (airlineID originAirportID destinationAirportID). We then check this with our functional dependencies and because originAirportID, destinationAirportID, and routeID are a part of the candidate keys, we can conclude that our relation is in 3NF. <br><br></span>
+                                airlineID can have multiple routes that would create anomalies. RouteID can only functionally determine originAirportID and destinationAirportID because it is equivalent to an origin city and 
+								destination city. Likewise, an origin and destination can determine which route to take. If we were to decompose the relation to check whether it is in 3NF or not, we first find the candidate 
+								keys. Here, the <b>candidate keys</b> are (airlineID routeID) and (airlineID originAirportID destinationAirportID). We then check this with our functional dependencies and because <b>originAirportID, 
+								destinationAirportID, and routeID are a part of the candidate keys, we can conclude that our relation is in 3NF</b>. <br><br></span>
 							<p><a href="https://github.com/kodingwithkelly/AirlineReservationSystem" target="_blank"><span class="label" style="color: white">This Project's Github Respository</span></a></p>
                             <ul class="actions">
                                 <li><a href="spotify_project.html" class="button">Previous Project</a></li>
